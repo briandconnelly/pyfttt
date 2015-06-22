@@ -10,11 +10,7 @@ import pyfttt
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the relevant file
-#with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
-#    long_description = f.read()
-
-long_description = 'A AM A LONG DESCRIPTION'
+long_description = 'pyfttt is a package for interacting with the IFTTT Maker Channel. Currently, it only supports sending events, but a lightweight web server that receives actions may be added in the future.'
 
 setup(
     name='pyfttt',
