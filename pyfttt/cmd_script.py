@@ -1,19 +1,15 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 """pyfttt.py - Send IFTTT Maker Channel Events"""
+
+__version__ = "0.1"
 
 import argparse
 import os
 import sys
 
 import requests
-
-
-def send_event(api_key, event, value1=None, value2=None, value3=None):
-    """Send an event to the IFTTT maker channel"""
-    url = "https://maker.ifttt.com/trigger/{e}/with/key/{k}/".format(e=event, k=api_key)
-    payload = {'value1': value1, 'value2': value2, 'value3': value3}
-    return requests.post(url, data=payload)
+import pyfttt
 
 
 def parse_arguments():
@@ -48,8 +44,9 @@ def main():
         sys.exit(1)
 
     try:
-        r = send_event(api_key=args.key, event=args.event, value1=args.value1,
-                       value2=args.value2, value3=args.value3)
+        r = pyfttt.send_event(api_key=args.key, event=args.event,
+                              value1=args.value1, value2=args.value2,
+                              value3=args.value3)
     except requests.exceptions.ConnectionError:
         print("Error: Could not connect to IFTTT")
         sys.exit(2)
@@ -77,8 +74,4 @@ def main():
         for e in j['errors']:
             print('Error: {}'.format(e['message']))
         sys.exit(8)
-
-
-if __name__ == "__main__":
-    main()
 

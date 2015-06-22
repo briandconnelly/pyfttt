@@ -8,7 +8,7 @@ Requirements
 ------------
 
 * Python 2.7 or greater
-* requests_ 2.7.0 or greater
+* requests_
 
 .. _requests: https://pypi.python.org/pypi/requests
 

@@ -4,3 +4,4 @@ VERSION = (0, 1)
 __version__ = ".".join(map(str, VERSION[0:2])) + "".join(VERSION[2:])
 __license__ = "BSD"
 
+from pyfttt.sending import *
