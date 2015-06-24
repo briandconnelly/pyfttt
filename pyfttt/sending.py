@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""Handle sending API requests to the IFTTT Maker Channel"""
+
 import requests
 
 def send_event(api_key, event, value1=None, value2=None, value3=None):

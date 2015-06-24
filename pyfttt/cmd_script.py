@@ -37,6 +37,7 @@ def parse_arguments():
 
 
 def main():
+    """Main function for pyfttt command line tool"""
     args = parse_arguments()
 
     if args.key is None:
@@ -44,9 +45,9 @@ def main():
         sys.exit(1)
 
     try:
-        r = pyfttt.send_event(api_key=args.key, event=args.event,
-                              value1=args.value1, value2=args.value2,
-                              value3=args.value3)
+        res = pyfttt.send_event(api_key=args.key, event=args.event,
+                                value1=args.value1, value2=args.value2,
+                                value3=args.value3)
     except requests.exceptions.ConnectionError:
         print("Error: Could not connect to IFTTT")
         sys.exit(2)
@@ -59,19 +60,23 @@ def main():
     except requests.exceptions.TooManyRedirects:
         print("Error: Too many redirects")
         sys.exit(5)
-    except requests.exceptions.RequestException as e:
-        print("Error: {e}".format(e=e))
+    except requests.exceptions.RequestException as reqe:
+        print("Error: {e}".format(e=reqe))
         sys.exit(6)
 
 
-    if r.status_code != requests.codes.ok:
+    if res.status_code != requests.codes.ok:
         try:
-            j = r.json()
+            j = res.json()
         except ValueError:
             print('Error: Could not parse server response. Event not sent')
             sys.exit(7)
 
-        for e in j['errors']:
-            print('Error: {}'.format(e['message']))
+        for err in j['errors']:
+            print('Error: {}'.format(err['message']))
         sys.exit(8)
+
+
+if __name__ == "__main__":
+    main()
 

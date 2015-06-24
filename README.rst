@@ -5,7 +5,7 @@ Python tools for interacting with IFTTT Maker Channel.
 
 Installation
 ------------
-
+::
     pip install pyfttt
 
 
