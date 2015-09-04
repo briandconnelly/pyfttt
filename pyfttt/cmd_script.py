@@ -2,8 +2,6 @@
 
 """pyfttt.py - Send IFTTT Maker Channel Events"""
 
-__version__ = "0.1"
-
 import argparse
 import os
 import sys
@@ -18,7 +16,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(prog=sys.argv[0],
                                      description='Send Maker Channel events to IFTTT',
                                      epilog='Visit https://ifttt.com/channels/maker for more information')
-    parser.add_argument('--version', action='version', version=__version__)
+    parser.add_argument('--version', action='version', version=pyfttt.__version__)
 
     sgroup = parser.add_argument_group(title='sending events')
     sgroup.add_argument('-k', '--key', metavar='K',

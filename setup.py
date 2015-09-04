@@ -1,10 +1,14 @@
 # Modified from https://github.com/pypa/sampleproject/blob/master/setup.py
 
 from setuptools import setup, find_packages
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
 from codecs import open
 from os import path
-
-import pyfttt
 
 here = path.abspath(path.dirname(__file__))
 
@@ -12,7 +16,7 @@ long_description = 'pyfttt is a package for interacting with the IFTTT Maker Cha
 
 setup(
     name='pyfttt',
-    version=pyfttt.__version__,
+    version='0.3',
     description='Python tools for interacting with the IFTTT Maker Channel',
     long_description=long_description,
     url='https://github.com/briandconnelly/pyfttt',
@@ -36,7 +40,7 @@ setup(
     # simple. Or you can use find_packages().
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
-    install_requires=['requests'],
+    install_requires=['requests>=2.7'],
 
     extras_require={},
     package_data={},
