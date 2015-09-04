@@ -2,11 +2,6 @@
 
 from setuptools import setup, find_packages
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
-
 from codecs import open
 from os import path
 
