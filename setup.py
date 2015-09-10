@@ -1,19 +1,40 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Script for installing pyfttt.
+
+To install, run:
+
+    python setup.py install
+
+"""
+
 # Modified from https://github.com/pypa/sampleproject/blob/master/setup.py
 
 from setuptools import setup, find_packages
 
 from codecs import open
 from os import path
+import sys
+
+
+if sys.argv[-1] == 'setup.py':
+    print("To install pyfttt, run 'python setup.py install'\n")
+
+if sys.version_info[:2] < (2, 7):
+    print("pyfttt requires Python 2.7 or later (%d.%d detected)." % sys.version_info[:2])
+    sys.exit(-1)
+
 
 here = path.abspath(path.dirname(__file__))
 
-long_description = 'pyfttt is a package for interacting with the IFTTT Maker Channel. Currently, it only supports sending events, but a lightweight web server that receives actions may be added in the future.'
 
 setup(
     name='pyfttt',
     version='0.3',
     description='Python tools for interacting with the IFTTT Maker Channel',
-    long_description=long_description,
+    long_description='pyfttt is a lightweight package for sending events to the IFTTT Maker Channel. Currently, it only supports sending events, but future releases may include a webserver for receiving events.',
     url='https://github.com/briandconnelly/pyfttt',
     author='Brian Connelly',
     author_email='bdc@bconnelly.net',
@@ -50,3 +71,4 @@ setup(
         ],
     },
 )
+
