@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Handle sending API requests to the IFTTT Maker Channel"""
+"""Handle sending API requests to the IFTTT Webhooks Channel"""
 
 import requests
 

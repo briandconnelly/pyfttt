@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""pyfttt.py - Send IFTTT Maker Channel Events"""
+"""pyfttt.py - Send IFTTT Webhooks Channel Events"""
 
 import argparse
 import os
@@ -14,8 +14,8 @@ def parse_arguments():
     """Parse command line arguments"""
 
     parser = argparse.ArgumentParser(prog=sys.argv[0],
-                                     description='Send Maker Channel events to IFTTT',
-                                     epilog='Visit https://ifttt.com/channels/maker for more information')
+                                     description='Send Webhooks Channel events to IFTTT',
+                                     epilog='Visit https://ifttt.com/channels/maker_webhooks for more information')
     parser.add_argument('--version', action='version', version=pyfttt.__version__)
 
     sgroup = parser.add_argument_group(title='sending events')

@@ -32,9 +32,9 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='pyfttt',
-    version='0.3.1',
-    description='Python tools for interacting with the IFTTT Maker Channel',
-    long_description='pyfttt is a lightweight package for sending events to the IFTTT Maker Channel. Currently, it only supports sending events, but future releases may include a webserver for receiving events.',
+    version='0.3.2',
+    description='Python tools for interacting with the IFTTT Webhooks Channel',
+    long_description='pyfttt is a lightweight package for sending events to the IFTTT Webhooks Channel. Currently, it only supports sending events, but future releases may include a webserver for receiving events.',
     url='https://github.com/briandconnelly/pyfttt',
     author='Brian Connelly',
     author_email='bdc@bconnelly.net',

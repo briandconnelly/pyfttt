@@ -1,7 +1,7 @@
 pyfttt
 ======
 
-Python tools for interacting with IFTTT Maker Channel.
+Python tools for interacting with IFTTT Webhooks Channel.
 
 Installation
 ------------
@@ -13,7 +13,7 @@ Installation
 Command Line Tool
 -----------------
 
-``pyfttt`` is an included command line tool for sending Maker Channel
+``pyfttt`` is an included command line tool for sending Webhooks Channel
 events. To see a list of available arguments, run ``pyfttt --help``,
 which produces:
 
@@ -21,7 +21,7 @@ which produces:
 
     usage: pyfttt [-h] [--version] [-k K] -e E [value1] [value2] [value3]
 
-    Send Maker Channel events to IFTTT
+    Send Webhooks Channel events to IFTTT
 
     optional arguments:
       -h, --help       show this help message and exit
@@ -34,7 +34,7 @@ which produces:
       value2           Extra data sent with the event (optional)
       value3           Extra data sent with the event (optional)
 
-    Visit https://ifttt.com/channels/maker for more information
+    Visit https://ifttt.com/channels/maker_webhooks for more information
 
 The ``--key`` argument can be omittrd if the IFTTT secret key is defined
 in the environment as ``IFTTT_API_KEY``.
