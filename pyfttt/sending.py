@@ -26,3 +26,4 @@ def send_event(api_key, event, value1=None, value2=None, value3=None):
                                                                      k=api_key)
     payload = {'value1': value1, 'value2': value2, 'value3': value3}
     return requests.post(url, data=payload)
+
