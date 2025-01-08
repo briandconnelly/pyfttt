@@ -7,7 +7,9 @@ import os
 import sys
 
 import requests
-import pyfttt
+
+from . import __version__
+from .sending import send_event
 
 
 def parse_arguments():
@@ -18,7 +20,7 @@ def parse_arguments():
         description="Send Webhooks Channel events to IFTTT",
         epilog="Visit https://ifttt.com/channels/maker_webhooks for more information",
     )
-    parser.add_argument("--version", action="version", version=pyfttt.__version__)
+    parser.add_argument("--version", action="version", version=__version__)
 
     sgroup = parser.add_argument_group(title="sending events")
     sgroup.add_argument(
@@ -57,7 +59,7 @@ def main():
         sys.exit(1)
 
     try:
-        res = pyfttt.send_event(
+        res = send_event(
             api_key=args.key,
             event=args.event,
             value1=args.value1,
