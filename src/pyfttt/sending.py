@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Handle sending API requests to the IFTTT Webhooks Channel"""
 
 from requests import post

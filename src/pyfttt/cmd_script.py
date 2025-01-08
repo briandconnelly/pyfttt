@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """pyfttt.py - Send IFTTT Webhooks Channel Events"""
 
 import argparse
